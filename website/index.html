@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://kit.fontawesome.com/534db19a81.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Clara Chu</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon2.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Clara Chu</h1>
+  <p>A student, guitarist, cat lover, and explorer.</p>
+</div>
+
+<div class="navbar">
+  <a href="#about">About</a>
+  <a href="#hobbies">Hobbies</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Clara</h2>
+    <img src="./img/me.jpg" alt="Photo of Clara" width="350" height="450">
+    <p>
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Age: 20</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Zodiac Sign: Pisces</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Favourite Colour: Blue</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Favourite Animal: Cat</li>
+        </ul>
+    </p>
+    <h2>Clara's Cat - Viki</h2>
+    <img src="./img/cat.jpg" alt="Photo of Viki" width="350" height="450">
+    <p>
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Age: 13</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Zodiac Sign: Cat (?)</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Favourite Colour: Don't care</li>
+            <li><span class="fa-li"><i class="fa-solid fa-paw"></i></span>Favourite Animal: Cat</li>
+        </ul>
+    </p>
+    <h2>Contact</h2>
+
+    <a href="https://www.facebook.com/hsiangyu.chu.98">
+        <i class="fa-brands fa-facebook fa-xl fa-border" style="--fa-border-padding: 5% 5%;"></i>
+    </a>
+    <a href="https://www.instagram.com/_clarachu">
+        <i class="fa-brands fa-instagram fa-xl fa-border" style="--fa-border-padding: 5% 5%;"></i>
+    </a>
+
+    <h3>Background Music</h3>
+    <p id="song">Dirty Shoes - Numcha</p>
+    <audio id="audio" controls loop autoplay>
+        <source id="source" src="dirtyshoes.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function changeMusic() {
+            var song = document.getElementById("song"); 
+            var audio = document.getElementById("audio");
+            var source = document.getElementById("source"); 
+            var button =  document.getElementById("changebutton");
+            
+            if (changeMusic.state == 0) {
+                song.innerHTML = "Of the Abyss - Lorna Shore";
+                button.innerHTML = "TOO BRUTAL PLZ CHANGE IT BACK 😭"; 
+                source.src = "oftheabyss.mp3";
+                changeMusic.state = 1;
+            }
+            else {
+                song.innerHTML = "Dirty Shoes - Numcha";
+                button.innerHTML = "Click for a better background music 😈"; 
+                source.src = "dirtyshoes.mp3";
+                changeMusic.state = 0;
+            }
+            
+            audio.load(); 
+            audio.play();
+        }
+        changeMusic.state = 0;
+    </script>
+    <br>
+    <button id="changebutton" type="button" onclick="changeMusic()">Click for a better background music 😈</button>
+
+    
+    <h3>Current Date/Time</h3>
+    <div><span id="datetime"></span></div>
+    <script>
+        function updateClock() {
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = 
+            dt.getMonth()+1 +"-"+ (dt.getDate()) +"-"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)) +":"+ (("0"+dt.getSeconds()).slice(-2));
+
+            setTimeout(updateClock, 1000);
+        }
+        updateClock();
+    </script>
+  </div>
+
+  <div class="main">
+    
+    <h2 id="about">About</h2>
+    <img src="./img/main.jpg" alt="Main pic" style="width:100%">
+    <p>
+        Clara Chu graduated from <a href="https://www.fg.tp.edu.tw">Taipei First Girls High School</a> in 2020. 
+        She is now a sophomore of National Taiwan University and majors in <a href="https://web.ee.ntu.edu.tw">Electrical Engineering</a>. 
+        She took 21 credits this semester, and "Introduction to Computer" is her favourite course. This website is made by her with 100% of passion and love!
+    </p>
+    <p>
+        She currently lives in New Taipei City with her family and her cat. It takes her about an hour to commute to school by the MRT every day, so she often skips classes and stays at home. 
+        However, she never missed a single class of "Introduction to Computer" even though it starts on 9:10 A.M. 
+        She really wants to get a good grade in this course.
+    </p>
+    <br>
+    
+
+    <h2 id="hobbies">Hobbies</h2>
+    <div class="row">
+        <div class="column">
+        <div class="content">
+            <img src="./img/guitar.jpg" alt="Guitar" style="width:100%">
+            <h3>Playing the Guitar</h3>
+            <p>Clara joined the rock club in high school, and has been learning electric guitar since 2018. 
+                She has performed in many live shows with her friends. 
+                Also, she sometimes does guitar cover videos and shares them on her instagram.
+            </p>
+        </div>
+        </div>
+        <div class="column">
+        <div class="content">
+            <img src="./img/show.jpg" alt="Show" style="width:100%">
+            <h3>Listening to Music</h3>
+            <p>Clara listens to various genres of music. Her favourites are Rock and Metal. 
+                She loves to go to live concerts to support the local bands she likes.
+                She dreams to travel to other countries and attend music festivals there.
+            </p>
+        </div>
+        </div>
+        <div class="column">
+        <div class="content">
+            <img src="./img/seaside.jpg" alt="Seaside" style="width:100%">
+            <h3>Going to the Seaside</h3>
+            <p>Although Clara is a very bad swimmer, seaside is her favourite place to go.
+                She can play in the water, build sand castles for the crabs, 
+                or even just watch the beautiful view and do nothing all day.
+                It always makes her feel relaxed.
+            </p>
+        </div>
+        </div>
+        <div class="column">
+        <div class="content">
+            <img src="./img/cake.jpg" alt="Cake" style="width:100%">
+            <h3>Tasting Delicious Food</h3>
+            <p>Clara is 100% a foodie. Food never fails to make her happy.
+                She especially loves having desserts.
+                Unfortunately, she gained a lot of weights lately, so she is going on a diet. 
+                Please don't feed her without her permission.
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <a href="https://youtu.be/bIPI4aYvqXI" class="button"> Guitar Cover </a>
+        </div>
+        <div class="column">
+            <a href="https://dancegavindanceband.com" class="button"> Favourite Band </a>
+        </div>
+        <div class="column">
+            <a href="https://www.eastcoast-nsa.gov.tw/zh-tw/attractions/detail/32" class="button"> Must-visit Seaside </a>
+        </div>
+        
+        <div class="column">
+            <a href="https://www.chiffon-cake.com.tw" class="button"> Favourite Patisserie </a>
+        </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Created by Clara Chu, May 2022</p>
+</div>
+
+</body>
+</html>
+
